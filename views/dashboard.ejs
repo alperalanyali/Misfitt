@@ -336,6 +336,7 @@
 								<tr>
 									<th scope="col">ID</th>
 									<th scope="col">Email</th>
+									<th scope="col">Name</th>
 									<th scope="col">Role</th>
 									<th scope="col">Delete</th>
 								</tr>
@@ -343,8 +344,9 @@
 							<tbody>
 								<% for(let i = 0; i < users.length;i ++){ %>
 								<tr>
-									<td><%= users[i]._id %></td>
+									<td><%= users[i]._id %></td>									
 									<td><%= users[i].email %></td>
+									<td><%= users[i].name %></td>
 									<td><%= users[i].role %></td>
 									<td>
 										<a href="/auth/<%=users[i]._id%>?_method=DELETE" onclick="return confirm('ARE YOU SURE?')" class="btn btn-danger rounded-0 text-white"><span>DELETE</span></a>
