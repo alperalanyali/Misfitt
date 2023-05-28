@@ -7,7 +7,7 @@ const flash = require('connect-flash');
 const methodOverride =require('method-override');
 
 const pageRoute = require('./routes/pageRoute');
-
+const authRoute = require('./routes/authRoute');
 
 
 const app = express();
@@ -55,7 +55,7 @@ app.use('*',(req,res,next)=>{
   next()
 })
 app.use('/',pageRoute);
-
+app.use('/auth',authRoute);
 
 
     
