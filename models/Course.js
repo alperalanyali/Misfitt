@@ -5,7 +5,6 @@ const Schema = mongoose.Schema;
 const CourseSchema = new Schema({
     name:{
         type:String,
-        unique:true,
         required:true,
     },
     description:{
@@ -13,10 +12,14 @@ const CourseSchema = new Schema({
         required:true
     },
 
-    maximumStudentNumber:{
+    hours:{
         type:Number,
         required:true,
-        default:10  
+    },
+    price:{
+        type:Number,
+        required:true,
+        
     },
     createdAdd:{
         type:Date,
@@ -26,10 +29,7 @@ const CourseSchema = new Schema({
         type:String,
         unique:true,
     },
-    category:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Category'
-    },
+
     user:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'User'

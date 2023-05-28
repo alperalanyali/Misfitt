@@ -28,6 +28,7 @@
     "slugify": "^1.6.6"
   },
   "devDependencies": {
+    "ejs-lint": "^2.0.0",
     "nodemon": "^2.0.22"
   }
 }

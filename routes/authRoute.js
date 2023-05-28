@@ -13,7 +13,9 @@ router.route('/register').post(
         body('password').not().isEmpty().withMessage('Please enter your password')
     ]
     ,userController.register);
-    
 router.route('/login').post(userController.loginUser);
+router.route('/logout').post(userController.logoutUser);
+router.route('/dashboard').get(userController.getDashboardPage);
+
 
 module.exports = router;

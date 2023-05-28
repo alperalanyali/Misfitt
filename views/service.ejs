@@ -1,3 +1,5 @@
+
+
 <%- include('partials/header.ejs') -%>
       <div class="back_re">
          <div class="container">
@@ -8,8 +10,30 @@
                   </div>
                </div>
             </div>
+            
          </div>
       </div>
+      <div class="row">
+         <% for(let i = 0; i < services.length; i++) { %>
+         <div class="col-md-4">
+           
+               <div class="col-md-4 m-4">
+                  <div id="" class="">                           
+                     <div class="trainer">
+                        <h3><%=services[i].name %> </h3>
+                        <p><%=services[i].description %></p>
+                        <label>Hours:<b><%=services[i].price%></b></label>
+                        <label>Price:<b><%=services[i].price%></b></label>
+                     </div>
+                  </div>
+                  <form  method="POST" action="/courses/enroll">
+                     <input type="hidden" name="course_id" action="" value="<%= services[i]._id%>">
+                     <button type="submit" class="btn btn-lg btn-warning text-white"><span>ENROLL</span></button>
+                  </form>
+               </div>                  
+         </div>
+      <% } %>
+   </div>
       <!-- services -->
       <div  class="services">
          <div class="container">
@@ -20,25 +44,8 @@
                   </div>
                </div>
             </div>
-            <div class="row">
-               <div class="col-md-4">
-                  <div class="se_img">
-                     <figure><img src="images/service1.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="se_img">
-                     <figure><img src="images/service2.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="se_img">
-                     <figure><img src="images/service3.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-            </div>
-         </div>
+            
       </div>
       <!-- end services -->
       <!--  footer -->
-<%- include('partials/footer.ejs') -%>
+<%- include('partials/footer.ejs') -%>,)
